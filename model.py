@@ -29,7 +29,7 @@ import pickle
 pickle.dump(rf_tuned, open('trained_model.sav', 'wb'))
 import pandas as pd
 loaded_model = pickle.load(open('trained_model.sav', 'rb'))
-df_new = pd.read_csv('D:/pgml/input.csv', index_col=0, sep=',')
+df_new = pd.read_csv('input.csv', index_col=0, sep=',')
 X_new = df_new.values
 y_new_predicted = loaded_model.predict(X_new)
 df_new['predicted_activity'] = y_new_predicted
